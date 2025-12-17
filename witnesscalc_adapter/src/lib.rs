@@ -54,7 +54,7 @@ macro_rules! witness {
 
                     // Two-pass dynamic allocation:
                     // Pass 1: Probe with small buffer to query required size
-                    let mut probe_buffer = vec![0u8; 1024]; // 1 KB probe buffer
+                    let mut probe_buffer = vec![0u8; 40 * 1024 * 1024]; // 1 KB probe buffer
                     let mut wtns_size: std::ffi::c_ulong = probe_buffer.len() as std::ffi::c_ulong;
 
                     let result = [<witnesscalc_ $x>](
